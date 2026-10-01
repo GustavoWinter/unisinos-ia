@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PageHeader } from "@/components/PageHeader";
 import { SourceList } from "@/components/SourceList";
 import type { PageContent } from "@/content/types";
@@ -18,7 +19,7 @@ export function Article({ page }: { page: PageContent }) {
       ))}
       {page.links?.map((link) => (
         <p key={link.href} className="mt-6 leading-relaxed">
-          <a href={link.href}>{link.label}</a>
+          <Link href={link.href}>{link.label}</Link>
           {". "}
           {link.text}
         </p>

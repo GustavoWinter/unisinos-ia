@@ -19,6 +19,8 @@ test("AI page keeps the research claims inside what the sources say", () => {
   assert.match(html, /SOFTWARELAB/);
   assert.match(html, /Unitec 3/);
 
+  assert.match(html, /fará parte do Núcleo de Pesquisa em Inteligência Artificial Unisinos, com pesquisadores de cinco escolas/);
+  assert.doesNotMatch(html, /O documento reúne/);
   assert.match(html, /fará parte/);
   assert.match(html, /Humanidades/);
   assert.match(html, /Politécnica/);

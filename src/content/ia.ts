@@ -29,7 +29,7 @@ export const ia: PageContent = {
       id: "nucleo",
       heading: "Núcleo entre escolas",
       paragraphs: [
-        "O projeto político-pedagógico do PPG em Filosofia, Resolução CONSUN 16/23, de 2023, diz que o programa fará parte do Núcleo de Pesquisa em Inteligência Artificial Unisinos. O documento reúne pesquisadores de cinco escolas: Humanidades, Politécnica, Saúde, Direito e Indústria Criativa. Não há, nessa fonte, data de estreia nem lista de projetos do núcleo.",
+        "O projeto político-pedagógico do PPG em Filosofia, Resolução CONSUN 16/23, de 2023, diz que o programa fará parte do Núcleo de Pesquisa em Inteligência Artificial Unisinos, com pesquisadores de cinco escolas: Humanidades, Politécnica, Saúde, Direito e Indústria Criativa. Não há, nessa fonte, data de estreia nem lista de projetos do núcleo.",
       ],
     },
     {
