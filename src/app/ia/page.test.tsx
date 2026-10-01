@@ -5,6 +5,11 @@ import IaPage, { metadata } from "@/app/ia/page";
 
 test("AI page keeps the research claims inside what the sources say", () => {
   assert.equal(metadata.title, "Inteligência artificial na Unisinos");
+  assert.match(metadata.description ?? "", /Site independente/);
+  assert.match(metadata.description ?? "", /Não é o canal oficial/);
+  assert.equal(metadata.openGraph?.url, "/ia");
+  assert.equal(metadata.openGraph?.locale, "pt_BR");
+  assert.equal(metadata.alternates?.canonical, "/ia");
   const html = renderToStaticMarkup(<IaPage />);
 
   assert.match(html, /presencial e noturno/);
@@ -42,4 +47,17 @@ test("AI page keeps the research claims inside what the sources say", () => {
   assert.match(html, /unisinos-ja-possui-diretrizes-para-uso-de-inteligencia-artificial-no-ensino/);
   assert.match(html, /nucleos-de-excelencia\/inovacao-de-software/);
   assert.match(html, /Resol_CONSUN_16-23_Proj_Politico-Pedag_PPG_Filosofia\.pdf/);
+
+  assert.match(html, /data-hero-cta/);
+  assert.match(html, /data-track="ia_hero_cta"/);
+  assert.match(html, /data-track="ia_course_cta"/);
+  assert.match(html, /id="contato"/);
+  assert.match(html, /Conhecer o bacharelado/);
+  assert.match(html, /Página oficial do bacharelado/);
+  assert.match(html, /não publica calendário, preço nem matrícula/);
+  assert.match(html, /não tem vínculo institucional/);
+  assert.match(html, /mailto:contato@exemplo.com/);
+  assert.match(html, /data-track="ia_lead_form"/);
+  assert.match(html, /Não envia dados à\s+Unisinos/);
+  assert.doesNotMatch(html, /R\$|mensalidade|bolsa integral/i);
 });

@@ -33,7 +33,8 @@ export function SiteMotion({ children }: { children: ReactNode }) {
               { scaleX: 0, duration: 0.7, transformOrigin: "left center" },
               "-=0.5",
             )
-            .from("[data-hero-lede]", { y: 22, autoAlpha: 0, duration: 0.7 }, "-=0.4");
+            .from("[data-hero-lede]", { y: 22, autoAlpha: 0, duration: 0.7 }, "-=0.4")
+            .from("[data-hero-cta]", { y: 16, autoAlpha: 0, duration: 0.55 }, "-=0.35");
 
           gsap.set("[data-reveal]", { autoAlpha: 0, y: 32 });
           ScrollTrigger.batch("[data-reveal]", {

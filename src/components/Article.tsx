@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ConversionBlock } from "@/components/ConversionBlock";
 import { PageHeader } from "@/components/PageHeader";
 import { SourceList } from "@/components/SourceList";
 import type { PageContent } from "@/content/types";
@@ -6,7 +7,7 @@ import type { PageContent } from "@/content/types";
 export function Article({ page }: { page: PageContent }) {
   return (
     <article className="mx-auto w-full max-w-6xl px-6 py-16 md:px-10 md:py-24">
-      <PageHeader title={page.title} lede={page.lede} />
+      <PageHeader title={page.title} lede={page.lede} cta={page.heroCta} />
       {page.links && page.links.length > 0 ? (
         <div className="mt-16 grid gap-4 md:grid-cols-2">
           {page.links.map((link, index) => (
@@ -15,7 +16,7 @@ export function Article({ page }: { page: PageContent }) {
               data-reveal
               className="border border-blue/15 bg-white/50 p-6 leading-relaxed"
             >
-              <span className="font-serif text-sm text-blue/50">
+              <span className="font-serif text-sm text-blue/70">
                 {String(index + 1).padStart(2, "0")}
               </span>
               <Link href={link.href} className="mt-3 block font-serif text-2xl">
@@ -35,7 +36,7 @@ export function Article({ page }: { page: PageContent }) {
               data-reveal
               className="grid gap-4 border-t border-blue/15 py-10 md:grid-cols-[6rem_minmax(0,1fr)] md:gap-10"
             >
-              <p className="font-serif text-4xl text-blue/35">
+              <p className="font-serif text-4xl text-blue/70">
                 {String(index + 1).padStart(2, "0")}
               </p>
               <div className="max-w-2xl">
@@ -53,6 +54,7 @@ export function Article({ page }: { page: PageContent }) {
           ))}
         </div>
       ) : null}
+      {page.cta ? <ConversionBlock cta={page.cta} /> : null}
       <div data-reveal className="mt-8">
         <SourceList sources={page.sources} />
       </div>

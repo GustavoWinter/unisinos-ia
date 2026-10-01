@@ -17,6 +17,21 @@ export type PageLink = {
   text: string;
 };
 
+export type CtaLink = {
+  href: string;
+  label: string;
+  event: string;
+};
+
+export type PageCta = {
+  id: string;
+  heading: string;
+  paragraphs: string[];
+  primary: CtaLink;
+  secondary?: CtaLink;
+  form?: boolean;
+};
+
 export type PageContent = {
   title: string;
   description: string;
@@ -24,4 +39,6 @@ export type PageContent = {
   sections: Section[];
   sources: Source[];
   links?: PageLink[];
+  heroCta?: CtaLink;
+  cta?: PageCta;
 };

@@ -1,4 +1,15 @@
-export function PageHeader({ title, lede }: { title: string; lede: string }) {
+import { TrackedAnchor } from "@/components/TrackedAnchor";
+import type { CtaLink } from "@/content/types";
+
+export function PageHeader({
+  title,
+  lede,
+  cta,
+}: {
+  title: string;
+  lede: string;
+  cta?: CtaLink;
+}) {
   return (
     <header className="max-w-4xl" data-hero>
       <p
@@ -17,6 +28,13 @@ export function PageHeader({ title, lede }: { title: string; lede: string }) {
       <p data-hero-lede className="mt-8 max-w-2xl text-lg leading-relaxed md:text-xl">
         {lede}
       </p>
+      {cta ? (
+        <p data-hero-cta className="mt-8">
+          <TrackedAnchor href={cta.href} event={cta.event} className="cta-primary">
+            {cta.label}
+          </TrackedAnchor>
+        </p>
+      ) : null}
     </header>
   );
 }

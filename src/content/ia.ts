@@ -1,12 +1,37 @@
 import type { PageContent } from "@/content/types";
+import { OFFICIAL_COURSE_URL, SITE_DISCLAIMER } from "@/content/site";
 
 const accessed = "Acesso em 30 de setembro de 2026.";
 
 export const ia: PageContent = {
   title: "Inteligência artificial na Unisinos",
   description:
-    "Bacharelado, pesquisa e regras de uso de IA na Unisinos, com foco no campus de São Leopoldo.",
+    "Site independente sobre o bacharelado em Inteligência Artificial da Unisinos em São Leopoldo: formação presencial e noturna, pesquisa e regras de uso no ensino. Não é o canal oficial da universidade.",
   lede: "A Unisinos trata inteligência artificial como formação, como pesquisa e como regra de uso no ensino. O recorte desta página é o campus de São Leopoldo, com o que a universidade publica sobre o bacharelado, os laboratórios e a resolução acadêmica.",
+  heroCta: {
+    href: OFFICIAL_COURSE_URL,
+    label: "Conhecer o bacharelado",
+    event: "ia_hero_cta",
+  },
+  cta: {
+    id: "contato",
+    heading: "Página oficial do bacharelado",
+    paragraphs: [
+      "A descrição do curso, a coordenação e as datas de vestibular estão na página oficial da Unisinos. Este site não publica calendário, preço nem matrícula.",
+      `${SITE_DISCLAIMER} O passo seguinte é a fonte oficial.`,
+    ],
+    primary: {
+      href: OFFICIAL_COURSE_URL,
+      label: "Conhecer o bacharelado",
+      event: "ia_course_cta",
+    },
+    secondary: {
+      href: "mailto:contato@exemplo.com",
+      label: "E-mail de demonstração (não é da Unisinos)",
+      event: "ia_email_cta",
+    },
+    form: true,
+  },
   sections: [
     {
       id: "bacharelado",
