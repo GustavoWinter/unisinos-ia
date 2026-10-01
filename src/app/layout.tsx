@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Source_Sans_3, Source_Serif_4 } from "next/font/google";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { SiteMotion } from "@/components/SiteMotion";
 import "./globals.css";
 
 const sourceSans = Source_Sans_3({
@@ -29,9 +30,11 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${sourceSans.variable} ${sourceSerif.variable} antialiased`}>
-        <SiteHeader />
-        <main className="mx-auto max-w-[65ch] px-6 py-10">{children}</main>
-        <SiteFooter />
+        <SiteMotion>
+          <SiteHeader />
+          <main>{children}</main>
+          <SiteFooter />
+        </SiteMotion>
       </body>
     </html>
   );

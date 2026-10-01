@@ -1,17 +1,37 @@
 @import "tailwindcss";
 
-:root {
-  --color-paper: #f4f1ea;
+@theme {
+  --color-paper: #f3efe6;
   --color-ink: #1c2430;
   --color-blue: #0c3d6e;
+  --color-sand: #c6a46a;
+}
+
+:root {
+  --color-paper: #f3efe6;
+  --color-ink: #1c2430;
+  --color-blue: #0c3d6e;
+  --color-sand: #c6a46a;
   --font-sans: var(--font-source-sans), sans-serif;
   --font-serif: var(--font-source-serif), serif;
 }
 
 body {
-  background: var(--color-paper);
+  background:
+    radial-gradient(ellipse 70% 40% at 0% 0%, rgb(12 61 110 / 0.09), transparent 55%),
+    var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-sans);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 40;
+  width: 6px;
+  background: var(--color-blue);
+  pointer-events: none;
 }
 
 h1,
@@ -19,16 +39,46 @@ h2 {
   font-family: var(--font-serif);
 }
 
-body > header {
+body > header,
+body > div > header {
+  position: relative;
   background: var(--color-blue);
   color: var(--color-paper);
 }
 
-body > header a {
+body > header a,
+body > div > header a {
   color: var(--color-paper);
 }
 
-main a,
-footer a {
+main a {
   color: var(--color-blue);
+}
+
+footer a {
+  color: var(--color-sand);
+}
+
+.draw-rule {
+  width: min(14rem, 40%);
+  height: 2px;
+  background: var(--color-sand);
+  transform-origin: left center;
+}
+
+.progress-line {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: var(--color-sand);
+  transform: scaleX(0);
+  transform-origin: left center;
+  will-change: transform;
+}
+
+[data-hero-title],
+[data-reveal] {
+  will-change: transform;
 }

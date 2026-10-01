@@ -6,11 +6,13 @@ import {
 
 export function SiteFooter() {
   return (
-    <footer className="mx-auto max-w-[65ch] px-6 py-10 text-sm">
-      <p>{SITE_DISCLAIMER}</p>
-      <p className="mt-2">
-        <a href={OFFICIAL_SITE_URL}>{OFFICIAL_SITE_LABEL}</a>
-      </p>
+    <footer className="mt-8 bg-blue px-6 py-12 text-sm text-paper md:px-10">
+      <div className="mx-auto flex max-w-6xl flex-col gap-3">
+        <p>{SITE_DISCLAIMER}</p>
+        <p>
+          <a href={OFFICIAL_SITE_URL}>{OFFICIAL_SITE_LABEL}</a>
+        </p>
+      </div>
     </footer>
   );
 }
