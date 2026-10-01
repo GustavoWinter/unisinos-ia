@@ -19,12 +19,12 @@ h2 {
   font-family: var(--font-serif);
 }
 
-header {
+body > header {
   background: var(--color-blue);
   color: var(--color-paper);
 }
 
-header a {
+body > header a {
   color: var(--color-paper);
 }
 
