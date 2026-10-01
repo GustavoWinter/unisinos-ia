@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+:root {
+  --color-paper: #f4f1ea;
+  --color-ink: #1c2430;
+  --color-blue: #0c3d6e;
+  --font-sans: var(--font-source-sans), sans-serif;
+  --font-serif: var(--font-source-serif), serif;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+h1,
+h2 {
+  font-family: var(--font-serif);
+}
+
+header {
+  background: var(--color-blue);
+  color: var(--color-paper);
+}
+
+header a {
+  color: var(--color-paper);
+}
+
+main a,
+footer a {
+  color: var(--color-blue);
+}
