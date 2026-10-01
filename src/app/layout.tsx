@@ -3,6 +3,7 @@ import { Source_Sans_3, Source_Serif_4 } from "next/font/google";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteMotion } from "@/components/SiteMotion";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/content/site";
 import "./globals.css";
 
 const sourceSans = Source_Sans_3({
@@ -16,12 +17,25 @@ const sourceSerif = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Unisinos em São Leopoldo",
     template: "%s | Unisinos São Leopoldo",
   },
-  description:
-    "Site independente sobre a Unisinos em São Leopoldo e o uso de inteligência artificial.",
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    siteName: SITE_NAME,
+    title: "Unisinos em São Leopoldo",
+    description: SITE_DESCRIPTION,
+    url: "/",
+  },
+  twitter: {
+    card: "summary",
+    title: "Unisinos em São Leopoldo",
+    description: SITE_DESCRIPTION,
+  },
 };
 
 export default function RootLayout({

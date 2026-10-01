@@ -12,4 +12,7 @@ test("layout sets portuguese and wraps every page with header and footer", () =>
   assert.match(source, /<SiteHeader \/>/);
   assert.match(source, /<SiteFooter \/>/);
   assert.match(source, /%s \| Unisinos São Leopoldo/);
+  assert.match(source, /metadataBase/);
+  assert.match(source, /openGraph/);
+  assert.match(source, /SITE_URL/);
 });
